@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+﻿<?xml version="1.0"?>
 <DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
   DTS:refId="Package"
   DTS:CreationDate="12/18/2021 10:02:26 AM"
@@ -11,9 +11,1464 @@
   DTS:LocaleID="16393"
   DTS:ObjectName="Package"
   DTS:PackageType="5"
-  DTS:VersionGUID="{34F31F74-5613-4694-A34A-956A997A850F}">
+  DTS:VersionBuild="3"
+  DTS:VersionGUID="{DC6D0F25-202A-4633-B93B-2A37DC4B3517}">
   <DTS:Property
     DTS:Name="PackageFormatVersion">8</DTS:Property>
-  <DTS:Variables />
-  <DTS:Executables />
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[DESKTOP-FMVVSOT.TESTDATABASE]"
+      DTS:CreationName="OLEDB"
+      DTS:DTSID="{7A150BB4-DCC2-4437-A934-3D1A0FEF1D97}"
+      DTS:ObjectName="DESKTOP-FMVVSOT.TESTDATABASE">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="Data Source=DESKTOP-FMVVSOT;Initial Catalog=TESTDATABASE;Provider=SQLNCLI11.1;Integrated Security=SSPI;Auto Translate=False;" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{051CE663-EBD6-4321-94B5-6A52EEC630D9}"
+      DTS:ObjectName="Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::filepath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Admin\Desktop\New folders\Archive\">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{826FA3BF-1CCB-46EF-8D83-A6334833565C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{6B45978B-811E-4497-A6F0-539B8B62C9D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{78CDB4DA-6B59-4C44-8D2B-2B348EEF778B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{59B086D0-CDD3-4873-82B2-C59721247BAA}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gender"
+              DTS:DTSID="{36919D67-14B1-4313-94E4-42A1ADD64CEE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ip_address"
+              DTS:DTSID="{769B4690-ABBB-4C5F-9087-9ABB3E2C5831}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{A76FAAD7-B517-4B7F-8053-F6BE8212BA8C}"
+      DTS:ObjectName="Flat File Connection Manager 1">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="16393"
+          DTS:HeaderRowDelimiter="_x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Users\Admin\Desktop\New folders\FilewithLF.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="id"
+              DTS:DTSID="{4EF54B1A-8E8B-4062-B4D3-BC0372CFA930}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{FAE94F03-DA1A-41AE-B22F-AC16EDFBB3B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{FBE65075-D74F-47F9-B008-F43B6D3A2012}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{7DE9638F-03FA-4D99-B4E8-D0F085DC057F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gender"
+              DTS:DTSID="{55408A42-56B0-4813-AD4B-5B85A40B9B25}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000A_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="ip_address"
+              DTS:DTSID="{6611A001-AF1F-4799-925C-30C96DEA8EA9}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C5A1DBFA-4F64-41B3-8A9D-0428CBE41B99}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="DestVariable">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Admin\Desktop\New folders\Archive</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9F0ACD55-E803-4370-A2C9-517221D45165}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="filepath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Users\Admin\Desktop\New folders\Archive\</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute SQL Task"
+      DTS:CreationName="Microsoft.ExecuteSQLTask"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{AA8896C6-4007-4B65-9BAD-C6088D19E9B1}"
+      DTS:ExecutableType="Microsoft.ExecuteSQLTask"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute SQL Task"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{7A150BB4-DCC2-4437-A934-3D1A0FEF1D97}"
+          SQLTask:BypassPrepare="False"
+          SQLTask:SqlStatementSource="TRUNCATE TABLE foreachlooppkg " xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{7089625E-AE2E-44D5-81AF-03E8984CFC92}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{8511DA7F-0A9C-4339-B767-3E626A3C460B}"
+        DTS:ObjectName="{8511DA7F-0A9C-4339-B767-3E626A3C460B}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Users\Admin\Desktop\New folders" />
+            <FEFEProperty
+              FileSpec="*.*" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Sequence Container"
+          DTS:CreationName="STOCK:SEQUENCE"
+          DTS:Description="Sequence Container"
+          DTS:DTSID="{9E8F7E56-D4FA-47D9-B9A5-624F1A552F86}"
+          DTS:ExecutableType="STOCK:SEQUENCE"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Sequence Container">
+          <DTS:Variables />
+          <DTS:Executables>
+            <DTS:Executable
+              DTS:refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task"
+              DTS:CreationName="Microsoft.Pipeline"
+              DTS:Description="Data Flow Task"
+              DTS:DTSID="{1EE96774-D6B8-4478-B3B5-20F1EE8C1E62}"
+              DTS:ExecutableType="Microsoft.Pipeline"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Data Flow Task">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <pipeline
+                  version="1">
+                  <components>
+                    <component
+                      refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source"
+                      componentClassID="Microsoft.FlatFileSource"
+                      contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                      description="Flat File Source"
+                      localeId="16393"
+                      name="Flat File Source"
+                      usesDispositions="true"
+                      version="1">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Specifies whether zero-length columns are treated as null."
+                          name="RetainNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                          name="FileNameColumnName"></property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Connections[FlatFileConnection]"
+                          connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager]"
+                          connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager]"
+                          name="FlatFileConnection" />
+                      </connections>
+                      <outputs>
+                        <output
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]"
+                          name="Flat File Source Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                              name="id"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[first_name]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]"
+                              name="first_name"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[last_name]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]"
+                              name="last_name"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
+                              name="email"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
+                              name="gender"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ip_address]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ip_address]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ip_address]"
+                              name="ip_address"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="id" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[first_name]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="first_name" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[last_name]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="last_name" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="email" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="gender" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ip_address]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="ip_address" />
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output]"
+                          isErrorOut="true"
+                          name="Flat File Source Error Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              codePage="1252"
+                              dataType="text"
+                              description="Flat File Source Error Output Column"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              name="Flat File Source Error Output Column" />
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination"
+                      componentClassID="Microsoft.OLEDBDestination"
+                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                      description="OLE DB Destination"
+                      name="OLE DB Destination"
+                      usesDispositions="true"
+                      version="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[foreachlooppkg]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">0</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepIdentity">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          name="FastLoadOptions"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          name="FastLoadMaxInsertCommitSize">2147483647</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Connections[OleDbConnection]"
+                          connectionManagerID="Package.ConnectionManagers[DESKTOP-FMVVSOT.TESTDATABASE]"
+                          connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FMVVSOT.TESTDATABASE]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                          errorOrTruncationOperation="Insert"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="OLE DB Destination Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="id"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[id]" />
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="first_name"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]" />
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="last_name"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]" />
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[email]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="email"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[email]" />
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gender]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="gender"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[gender]" />
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ip_address]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="ip_address"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ip_address]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output].Columns[ip_address]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="id" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="first_name" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="last_name" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="email" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="gender" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ip_address]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="ip_address" />
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="OLE DB Destination Error Output"
+                          synchronousInputId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                  </components>
+                  <paths>
+                    <path
+                      refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task.Paths[Flat File Source Output]"
+                      endId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      name="Flat File Source Output"
+                      startId="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source.Outputs[Flat File Source Output]" />
+                  </paths>
+                </pipeline>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1"
+              DTS:CreationName="Microsoft.Pipeline"
+              DTS:Description="Data Flow Task"
+              DTS:DTSID="{156BA7C2-88EA-42A5-A759-4B3920BC45EA}"
+              DTS:ExecutableType="Microsoft.Pipeline"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="Data Flow Task 1"
+              DTS:TaskContact="Performs high-performance data extraction, transformation and loading;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <pipeline
+                  version="1">
+                  <components>
+                    <component
+                      refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source"
+                      componentClassID="Microsoft.FlatFileSource"
+                      contactInfo="Flat File Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;1"
+                      description="Flat File Source"
+                      localeId="16393"
+                      name="Flat File Source"
+                      usesDispositions="true"
+                      version="1">
+                      <properties>
+                        <property
+                          dataType="System.Boolean"
+                          description="Specifies whether zero-length columns are treated as null."
+                          name="RetainNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of an output column containing the file name. If no name is specified, no output column containing the file name will be generated."
+                          name="FileNameColumnName"></property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Connections[FlatFileConnection]"
+                          connectionManagerID="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                          connectionManagerRefId="Package.ConnectionManagers[Flat File Connection Manager 1]"
+                          name="FlatFileConnection" />
+                      </connections>
+                      <outputs>
+                        <output
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output]"
+                          name="Flat File Source Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[id]"
+                              name="id"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[first_name]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]"
+                              name="first_name"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[last_name]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]"
+                              name="last_name"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[email]"
+                              name="email"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[gender]"
+                              name="gender"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ip_address]"
+                              codePage="1252"
+                              dataType="str"
+                              errorOrTruncationOperation="Conversion"
+                              errorRowDisposition="FailComponent"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ip_address]"
+                              length="50"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ip_address]"
+                              name="ip_address"
+                              truncationRowDisposition="FailComponent">
+                              <properties>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the column uses the faster, locale-neutral parsing routines."
+                                  name="FastParse">false</property>
+                                <property
+                                  dataType="System.Boolean"
+                                  description="Indicates whether the data is in binary format."
+                                  name="UseBinaryFormat">false</property>
+                              </properties>
+                            </outputColumn>
+                          </outputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[id]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="id" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[first_name]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="first_name" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[last_name]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="last_name" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[email]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="email" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[gender]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="gender" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].ExternalColumns[ip_address]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="ip_address" />
+                          </externalMetadataColumns>
+                        </output>
+                        <output
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output]"
+                          isErrorOut="true"
+                          name="Flat File Source Error Output">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              codePage="1252"
+                              dataType="text"
+                              description="Flat File Source Error Output Column"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[Flat File Source Error Output Column]"
+                              name="Flat File Source Error Output Column" />
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                    <component
+                      refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination"
+                      componentClassID="Microsoft.OLEDBDestination"
+                      contactInfo="OLE DB Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;4"
+                      description="OLE DB Destination"
+                      name="OLE DB Destination"
+                      usesDispositions="true"
+                      version="4">
+                      <properties>
+                        <property
+                          dataType="System.Int32"
+                          description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                          name="CommandTimeout">0</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the name of the database object used to open a rowset."
+                          name="OpenRowset">[dbo].[foreachlooppkg]</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies the variable that contains the name of the database object used to open a rowset."
+                          name="OpenRowsetVariable"></property>
+                        <property
+                          dataType="System.String"
+                          description="The SQL command to be executed."
+                          name="SqlCommand"
+                          UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor"></property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the column code page to use when code page information is unavailable from the data source."
+                          name="DefaultCodePage">1252</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Forces the use of the DefaultCodePage property value when describing character data."
+                          name="AlwaysUseDefaultCodePage">false</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies the mode used to access the database."
+                          name="AccessMode"
+                          typeConverter="AccessMode">3</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the values supplied for identity columns will be copied to the destination. If false, values for identity columns will be auto-generated at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepIdentity">false</property>
+                        <property
+                          dataType="System.Boolean"
+                          description="Indicates whether the columns containing null will have null inserted in the destination. If false, columns containing null will have their default values inserted at the destination. Applies only if fast load is turned on."
+                          name="FastLoadKeepNulls">false</property>
+                        <property
+                          dataType="System.String"
+                          description="Specifies options to be used with fast load.  Applies only if fast load is turned on."
+                          name="FastLoadOptions">TABLOCK,CHECK_CONSTRAINTS</property>
+                        <property
+                          dataType="System.Int32"
+                          description="Specifies when commits are issued during data insertion.  A value of 0 specifies that one commit will be issued at the end of data insertion.  Applies only if fast load is turned on."
+                          name="FastLoadMaxInsertCommitSize">2147483647</property>
+                      </properties>
+                      <connections>
+                        <connection
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Connections[OleDbConnection]"
+                          connectionManagerID="Package.ConnectionManagers[DESKTOP-FMVVSOT.TESTDATABASE]"
+                          connectionManagerRefId="Package.ConnectionManagers[DESKTOP-FMVVSOT.TESTDATABASE]"
+                          description="The OLE DB runtime connection used to access the database."
+                          name="OleDbConnection" />
+                      </connections>
+                      <inputs>
+                        <input
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                          errorOrTruncationOperation="Insert"
+                          errorRowDisposition="FailComponent"
+                          hasSideEffects="true"
+                          name="OLE DB Destination Input">
+                          <inputColumns>
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[id]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="id"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[id]" />
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[first_name]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="first_name"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[first_name]" />
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[last_name]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="last_name"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[last_name]" />
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[email]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="email"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[email]" />
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[gender]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="gender"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[gender]" />
+                            <inputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].Columns[ip_address]"
+                              cachedCodepage="1252"
+                              cachedDataType="str"
+                              cachedLength="50"
+                              cachedName="ip_address"
+                              externalMetadataColumnId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ip_address]"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output].Columns[ip_address]" />
+                          </inputColumns>
+                          <externalMetadataColumns
+                            isUsed="True">
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[id]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="id" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[first_name]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="first_name" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[last_name]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="last_name" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[email]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="email" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[gender]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="gender" />
+                            <externalMetadataColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input].ExternalColumns[ip_address]"
+                              codePage="1252"
+                              dataType="str"
+                              length="50"
+                              name="ip_address" />
+                          </externalMetadataColumns>
+                        </input>
+                      </inputs>
+                      <outputs>
+                        <output
+                          refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output]"
+                          exclusionGroup="1"
+                          isErrorOut="true"
+                          name="OLE DB Destination Error Output"
+                          synchronousInputId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]">
+                          <outputColumns>
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              dataType="i4"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorCode]"
+                              name="ErrorCode"
+                              specialFlags="1" />
+                            <outputColumn
+                              refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              dataType="i4"
+                              lineageId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Outputs[OLE DB Destination Error Output].Columns[ErrorColumn]"
+                              name="ErrorColumn"
+                              specialFlags="2" />
+                          </outputColumns>
+                          <externalMetadataColumns />
+                        </output>
+                      </outputs>
+                    </component>
+                  </components>
+                  <paths>
+                    <path
+                      refId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1.Paths[Flat File Source Output]"
+                      endId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination.Inputs[OLE DB Destination Input]"
+                      name="Flat File Source Output"
+                      startId="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source.Outputs[Flat File Source Output]" />
+                  </paths>
+                </pipeline>
+              </DTS:ObjectData>
+            </DTS:Executable>
+            <DTS:Executable
+              DTS:refId="Package\Foreach Loop Container\Sequence Container\File System Task"
+              DTS:CreationName="Microsoft.FileSystemTask"
+              DTS:Description="File System Task"
+              DTS:DTSID="{DB29B789-15F6-4E99-A843-FE20516CD96F}"
+              DTS:ExecutableType="Microsoft.FileSystemTask"
+              DTS:LocaleID="-1"
+              DTS:ObjectName="File System Task"
+              DTS:TaskContact="File System Task;Microsoft Corporation; SQL Server 2019; © 2019 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+              DTS:ThreadHint="0">
+              <DTS:Variables />
+              <DTS:ObjectData>
+                <FileSystemData
+                  TaskOperationType="MoveFile"
+                  TaskSourcePath="User::filepath"
+                  TaskIsSourceVariable="True"
+                  TaskDestinationPath="User::DestVariable"
+                  TaskIsDestinationVariable="True" />
+              </DTS:ObjectData>
+            </DTS:Executable>
+          </DTS:Executables>
+          <DTS:PrecedenceConstraints>
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Foreach Loop Container\Sequence Container.PrecedenceConstraints[Constraint]"
+              DTS:CreationName=""
+              DTS:DTSID="{5A47DCC4-AFDF-4411-B2AF-4BD8FD40F343}"
+              DTS:From="Package\Foreach Loop Container\Sequence Container\Data Flow Task"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint"
+              DTS:To="Package\Foreach Loop Container\Sequence Container\File System Task" />
+            <DTS:PrecedenceConstraint
+              DTS:refId="Package\Foreach Loop Container\Sequence Container.PrecedenceConstraints[Constraint 1]"
+              DTS:CreationName=""
+              DTS:DTSID="{E142BD7A-8496-4D5F-8982-3D034752CCA3}"
+              DTS:From="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1"
+              DTS:LogicalAnd="True"
+              DTS:ObjectName="Constraint 1"
+              DTS:To="Package\Foreach Loop Container\Sequence Container\File System Task" />
+          </DTS:PrecedenceConstraints>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{0F4E4A35-3569-4B48-979D-E4E19B4E7D7E}"
+          DTS:ObjectName="{0F4E4A35-3569-4B48-979D-E4E19B4E7D7E}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::filepath" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{D9B6DAE4-710D-42B7-9036-7A53A42214E7}"
+      DTS:From="Package\Execute SQL Task"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach Loop Container" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="16" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Foreach Loop Container\Sequence Container\Data Flow Task"
+          TopLeft="26.1285827266929,19.123528991356" />
+        <NodeLayout
+          Size="160,41.6"
+          Id="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1"
+          TopLeft="29.9571527831411,129.688236014818" />
+        <NodeLayout
+          Size="156.8,41.6"
+          Id="Package\Foreach Loop Container\Sequence Container\File System Task"
+          TopLeft="200.928577753962,69.9464942349277" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Sequence Container.PrecedenceConstraints[Constraint]"
+          TopLeft="176.528582726693,39.923528991356">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="24.3999950272695,50.8229652435717"
+              Start="0,0"
+              End="16.8999950272695,50.8229652435717">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="8.19999751363477,0" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.19999751363477,0"
+                    Point2="12.1999975136348,0"
+                    Point3="12.1999975136348,4" />
+                  <mssgle:LineSegment
+                    End="12.1999975136348,46.8229652435717" />
+                  <mssgle:CubicBezierSegment
+                    Point1="12.1999975136348,46.8229652435717"
+                    Point2="12.1999975136348,50.8229652435717"
+                    Point3="16.1999975136348,50.8229652435717" />
+                  <mssgle:LineSegment
+                    End="16.8999950272695,50.8229652435717" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Sequence Container.PrecedenceConstraints[Constraint 1]"
+          TopLeft="109.957152783141,129.688236014818">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="90.9714249708214,-33.3417417798904"
+              Start="0,0"
+              End="83.4714249708214,-33.3417417798904">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,-29.3417417798904" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,-29.3417417798904"
+                    Point2="0,-33.3417417798904"
+                    Point3="4,-33.3417417798904" />
+                  <mssgle:LineSegment
+                    End="83.4714249708214,-33.3417417798904" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="362.4,256.8"
+          Size="362.4,300"
+          Id="Package\Foreach Loop Container\Sequence Container"
+          TopLeft="51.0857178668586,19.5705884326288" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="435.2,376.8"
+          Size="435.2,420"
+          Id="Package\Foreach Loop Container"
+          TopLeft="159.214288332025,113.170589745333" />
+        <NodeLayout
+          Size="162.4,41.6"
+          Id="Package\Execute SQL Task"
+          TopLeft="169.142860023343,13.4588237181667" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="250.342860023343,55.0588237181667">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="126.471428308682,58.1117660271667"
+              Start="0,0"
+              End="126.471428308682,50.6117660271667">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,25.0558830135834" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,25.0558830135834"
+                    Point2="0,29.0558830135834"
+                    Point3="4,29.0558830135834" />
+                  <mssgle:LineSegment
+                    End="122.471428308682,29.0558830135834" />
+                  <mssgle:CubicBezierSegment
+                    Point1="122.471428308682,29.0558830135834"
+                    Point2="126.471428308682,29.0558830135834"
+                    Point3="126.471428308682,33.0558830135834" />
+                  <mssgle:LineSegment
+                    End="126.471428308682,50.6117660271667" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Sequence Container\Data Flow Task">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Foreach Loop Container\Sequence Container\Data Flow Task\Flat File Source"
+          TopLeft="176.7,74.3" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination"
+          TopLeft="184.3,170.7" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Sequence Container\Data Flow Task.Paths[Flat File Source Output]"
+          TopLeft="251.9,115.9">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="17.6000000000001,54.8"
+              Start="0,0"
+              End="17.6000000000001,47.3">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,23.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,23.4"
+                    Point2="0,27.4"
+                    Point3="4,27.4" />
+                  <mssgle:LineSegment
+                    End="13.6000000000001,27.4" />
+                  <mssgle:CubicBezierSegment
+                    Point1="13.6000000000001,27.4"
+                    Point2="17.6000000000001,27.4"
+                    Point3="17.6000000000001,31.4" />
+                  <mssgle:LineSegment
+                    End="17.6000000000001,47.3" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Sequence Container\Data Flow Task\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+  <TaskHost
+    design-time-name="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="150.4,41.6"
+          Id="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\Flat File Source"
+          TopLeft="5.5,5.5" />
+        <NodeLayout
+          Size="170.4,41.6"
+          Id="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination"
+          TopLeft="202.7,170.7" />
+        <EdgeLayout
+          Id="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1.Paths[Flat File Source Output]"
+          TopLeft="80.7,47.1">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="207.2,123.6"
+              Start="0,0"
+              End="207.2,116.1">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,57.8"
+                    Point2="0,61.8"
+                    Point3="4,61.8" />
+                  <mssgle:LineSegment
+                    End="203.2,61.8" />
+                  <mssgle:CubicBezierSegment
+                    Point1="203.2,61.8"
+                    Point2="207.2,61.8"
+                    Point3="207.2,65.8" />
+                  <mssgle:LineSegment
+                    End="207.2,116.1" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Foreach Loop Container\Sequence Container\Data Flow Task 1\OLE DB Destination">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+      <Property>
+        <Name>TableInfoObjectType</Name>
+        <Value
+          type="q2:string">Table</Value>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
 </DTS:Executable>
