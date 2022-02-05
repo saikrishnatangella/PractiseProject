@@ -1,0 +1,139 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="2/5/2022 9:45:11 AM"
+  DTS:CreationName="Microsoft.Package"
+  DTS:CreatorComputerName="DESKTOP-FMVVSOT"
+  DTS:CreatorName="DESKTOP-FMVVSOT\Admin"
+  DTS:DTSID="{3C15FDD2-2FE2-451E-9F8F-167FA53F625B}"
+  DTS:EnableConfig="True"
+  DTS:ExecutableType="Microsoft.Package"
+  DTS:LastModifiedProductVersion="15.0.2000.121"
+  DTS:LocaleID="16393"
+  DTS:ObjectName="8 Parentpackage"
+  DTS:PackageType="5"
+  DTS:VersionBuild="7"
+  DTS:VersionGUID="{71F6690D-E331-424E-8340-581952E3B857}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">8</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Childpacakge.dtsx]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{47C44021-95EF-4B86-8524-7AD79A69FCFB}"
+      DTS:ObjectName="Childpacakge.dtsx">
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="C:\Users\Admin\source\repos\DailyPractise\DailyPractise\Childpacakge.dtsx" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:Configurations>
+    <DTS:Configuration
+      DTS:ConfigurationString="pvariable"
+      DTS:ConfigurationVariable="\Package.Properties[SafeRecursiveProjectPackageExecution]"
+      DTS:CreationName=""
+      DTS:DTSID="{45E5848C-508E-4364-B06F-FD3CEDF5FC7D}"
+      DTS:ObjectName="Configuration 1" />
+  </DTS:Configurations>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F7F12132-EF0B-4623-8907-808C0843A112}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="pvariable">
+      <DTS:VariableValue
+        DTS:DataType="8">D:\SOURCE\Archive\New\DC.txt</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Foreach Loop Container"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{A38D59F4-3E8F-4DE8-A8B2-34FC93390A20}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach Loop Container">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="Microsoft.ForEachFileEnumerator"
+        DTS:DTSID="{2261E83D-4317-4802-962B-7E94DFC7E5AE}"
+        DTS:ObjectName="{2261E83D-4317-4802-962B-7E94DFC7E5AE}">
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="D:\SOURCE\Archive\New" />
+            <FEFEProperty
+              FileSpec="*.*" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach Loop Container\Execute Package Task"
+          DTS:CreationName="Microsoft.ExecutePackageTask"
+          DTS:Description="Execute Package Task"
+          DTS:DTSID="{C752CCE3-E38A-4304-B8B4-4254BD8CDB8F}"
+          DTS:ExecutableType="Microsoft.ExecutePackageTask"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Execute Package Task"
+          DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <ExecutePackageTask>
+              <Connection>{47C44021-95EF-4B86-8524-7AD79A69FCFB}</Connection>
+            </ExecutePackageTask>
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{7CCD583B-835B-414A-AF38-9840ADE518A1}"
+          DTS:ObjectName="{7CCD583B-835B-414A-AF38-9840ADE518A1}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::pvariable" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="8">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="184.8,41.6"
+          Id="Package\Foreach Loop Container\Execute Package Task"
+          TopLeft="38.6666573418514,17.1200013885498" />
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="269.6,112"
+          Size="269.6,155.2"
+          Id="Package\Foreach Loop Container"
+          TopLeft="195.99999221166,114.40000090917" />
+        <AnnotationLayout
+          Text="select *from parentchild_table"
+          ParentId="Package"
+          FontInfo="{assembly:Null}"
+          Size="187.2,60"
+          Id="bcdb4d82-3791-4131-8826-1f8c758e5f9e"
+          TopLeft="621.333308643766,175.413334727393" />
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>
